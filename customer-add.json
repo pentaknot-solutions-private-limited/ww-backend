@@ -1,0 +1,15 @@
+{
+  "customerTypeId": "65e1af4ae5eae3eaa8c411d9",
+  "salutationId": "65e1b8231ec12384f5894b24",
+  "stateId": "65e2fad126ba51749ac7386a",
+  "placeOfSupplyId": "65e2fad126ba51749ac7386a",
+  "companyName": "Pentaknot",
+  "firstName": "Shlok",
+  "addressLine1": "test address 1",
+  "city": "Mumbai",
+  "pincode": 401107,
+  "mobileNo": "+918356047973",
+  "email": "test@gmail.com",
+  "pan": "BGKPC0885J",
+  "gst": "27BGKPC0885J1ZW"
+}
