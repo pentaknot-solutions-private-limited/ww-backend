@@ -9,7 +9,8 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { Public } from './decorators/public.decorator';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
+import { SignInDto } from '../user/dto/signin-dto';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -19,6 +20,7 @@ export class AuthController {
   @Public()
   @HttpCode(HttpStatus.OK)
   @Post('login')
+  @ApiBody({type: SignInDto})
   signIn(@Body() signInDto: Record<string, any>) {
     return this.authService.signIn(signInDto.username, signInDto.password);
   }

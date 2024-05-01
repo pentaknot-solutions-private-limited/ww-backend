@@ -9,6 +9,8 @@ import { CustomerModule } from './modules/customer/customer.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { SaleModule } from './modules/sale/sale.module';
 import { SaleStatusModule } from './modules/sale-status/sale-status.module';
+import { PaymentModule } from './modules/payment/payment.module';
+import { PaymentModeModule } from './modules/payment-mode/payment-mode.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -28,6 +30,8 @@ async function bootstrap() {
       CustomerModule,
       SaleModule,
       SaleStatusModule,
+      PaymentModule,
+      PaymentModeModule,
     ],
   });
   SwaggerModule.setup('api', app, document);

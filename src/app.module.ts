@@ -12,6 +12,8 @@ import { ResponseInterceptor } from './interceptors/response.interceptor';
 import { AuthModule } from './modules/auth/auth.module';
 import { SaleModule } from './modules/sale/sale.module';
 import { SaleStatusModule } from './modules/sale-status/sale-status.module';
+import { PaymentModule } from './modules/payment/payment.module';
+import { PaymentModeModule } from './modules/payment-mode/payment-mode.module';
 
 @Module({
   imports: [
@@ -23,6 +25,8 @@ import { SaleStatusModule } from './modules/sale-status/sale-status.module';
     CustomerModule,
     SaleModule,
     SaleStatusModule,
+    PaymentModule,
+    PaymentModeModule,
     MongooseModule.forRoot(
       `mongodb+srv://ww-admin:bKhEuEex62h1yIgr@cluster0.dvto8iz.mongodb.net/ww-invoicer-db`,
     ),
