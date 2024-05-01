@@ -17,12 +17,12 @@ import { SignInDto } from '../user/dto/signin-dto';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
+  @Post('login')
   @Public()
   @HttpCode(HttpStatus.OK)
-  @Post('login')
-  @ApiBody({type: SignInDto})
-  signIn(@Body() signInDto: Record<string, any>) {
-    return this.authService.signIn(signInDto.username, signInDto.password);
+  @ApiBody({ type: SignInDto })
+  signIn(@Body() signInDto: SignInDto) {
+    return this.authService.signIn(signInDto);
   }
 
   @Get('profile')

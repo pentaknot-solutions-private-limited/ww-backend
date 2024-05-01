@@ -12,9 +12,7 @@ export class PaymentModeService {
   ) {}
 
   create(createPaymentModeDto: CreatePaymentModeDto): Promise<PaymentMode> {
-    const createdPaymentMode = new this.paymentModeModel(
-      createPaymentModeDto,
-    );
+    const createdPaymentMode = new this.paymentModeModel(createPaymentModeDto);
     return createdPaymentMode.save();
   }
 
@@ -27,10 +25,12 @@ export class PaymentModeService {
   }
 
   update(id: number, updatePaymentModeDto: UpdatePaymentModeDto) {
+    console.log('updatePaymentModeDto', updatePaymentModeDto);
     return `This action updates a #${id} paymentMode`;
   }
 
   async remove(id: number) {
+    console.log('id', id);
     const deleted = '';
     // await this.paymentModeModel
     //   .findByIdAndRemove({ _id: id })

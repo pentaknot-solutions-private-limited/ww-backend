@@ -16,14 +16,12 @@ export class SaleService {
   findAll(): Promise<Sale[]> {
     return this.saleModel
       .find({ isActive: true })
-      .populate([
-        'customerId', 
-        'saleStatusId']) // Assuming customerId is the reference to the Customer collection
+      .populate(['customerId', 'saleStatusId']) // Assuming customerId is the reference to the Customer collection
       .exec();
     // return this.saleModel.find({ isActive: true }).exec();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.saleModel.findOne({ _id: id, isActive: true }).exec();
   }
 

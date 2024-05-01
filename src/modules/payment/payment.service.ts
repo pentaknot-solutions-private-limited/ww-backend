@@ -10,7 +10,7 @@ export class PaymentService {
     @Inject('PAYMENT_MODEL') private readonly paymentModel: Model<Payment>,
   ) {}
 
-  create(createPaymentDto: CreatePaymentDto): Promise<Payment> {
+  async create(createPaymentDto: CreatePaymentDto): Promise<Payment> {
     const createdPayment = new this.paymentModel(createPaymentDto);
     return createdPayment.save();
   }
