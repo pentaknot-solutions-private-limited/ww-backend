@@ -31,6 +31,12 @@ export class SaleController {
     return this.saleService.findAll();
   }
 
+  @Get('latest/record')
+  findLatest() {
+    return this.saleService.findLatest();
+  }
+
+
   @Get('dependencies')
   async findDependencies() {
     return {
@@ -43,7 +49,8 @@ export class SaleController {
   findOne(@Param('id') id: string) {
     return this.saleService.findOne(id);
   }
-
+  
+  
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSaleDto: UpdateSaleDto) {
     return this.saleService.update(

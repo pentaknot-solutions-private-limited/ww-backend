@@ -25,6 +25,16 @@ export class SaleService {
     return this.saleModel.findOne({ _id: id, isActive: true }).exec();
   }
 
+  async findLatest() {
+    // return this.saleModel.findOne({ $orderby: { $natural: -1 } }).exec();
+    const latestRecord = await this.saleModel
+      .find()
+      .sort({ updatedAt: -1 })
+      .limit(1)
+      .exec();
+    if (latestRecord && latestRecord?.length > 0) return latestRecord[0];
+  }
+
   // Add Sale Dependencies
   findDependencies() {
     // return this.saleTypeModel.find().exec();

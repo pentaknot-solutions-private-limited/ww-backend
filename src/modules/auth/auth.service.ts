@@ -19,9 +19,15 @@ export class AuthService {
       username: user.username,
       sub: user?._id,
       role: user?.roleId,
+      firstName: user?.firstName,
+      lastName: user?.lastName,
     };
+    console.log(payload);
+    
     return {
       access_token: await this.jwtService.signAsync(payload),
+      firstName: user?.firstName,
+      lastName: user?.lastName,
     };
   }
 }
