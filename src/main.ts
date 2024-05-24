@@ -14,6 +14,8 @@ import { PaymentModeModule } from './modules/payment-mode/payment-mode.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  // const PORT = 3000;
+  const PORT = process.env.PORT || 3000;
   const config = new DocumentBuilder()
     .setTitle('WW Invoicer')
     .setDescription('The WW invoicer API description')
@@ -46,7 +48,7 @@ async function bootstrap() {
   });
   SwaggerModule.setup('api', app, document);
   app.enableCors();
-  await app.listen(3000);
+  await app.listen(PORT);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
